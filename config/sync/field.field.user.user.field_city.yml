@@ -1,0 +1,30 @@
+uuid: ba24b0f4-ca4c-468d-b882-f250a94561c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_city
+    - taxonomy.vocabulary.city
+  module:
+    - user
+id: user.user.field_city
+field_name: field_city
+entity_type: user
+bundle: user
+label: 'Your City'
+description: 'Please select the city from the list where you are currently living.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      city: city
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

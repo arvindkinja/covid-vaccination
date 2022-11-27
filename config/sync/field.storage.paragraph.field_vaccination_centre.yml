@@ -1,0 +1,20 @@
+uuid: 95213435-0f6a-44c3-8a3c-01d67adf89fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_vaccination_centre
+field_name: field_vaccination_centre
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Vaccination Appointment module file.
+ */
+
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_form_alter().
+ */
+function vaccination_appointment_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Remove the appointment,contact fields from non admin user's form.
+  $user = \Drupal::currentUser()->getRoles();
+  if ($form_id == 'user_register_form' || (!in_array("administrator", $user) && $form_id == 'user_form')) {
+    $form['field_appointment_information']['#access'] = FALSE;
+    $form['contact']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function vaccination_appointment_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  // Filter the result based on logged in user city.
+  if ($view->id() == 'users_city_location') {
+    $currentUser = User::load(\Drupal::currentUser()->id());
+    $city_id = $currentUser->field_city->entity->id();
+    // Traverse through the 'where' part of the query.
+    foreach ($query->where as &$condition_group) {
+      foreach ($condition_group['conditions'] as &$condition) {
+        if ($condition['field'] == 'node__field_city.field_city_target_id = :node__field_city_field_city_target_id') {
+          $condition['value'] = [
+            ':node__field_city_field_city_target_id' => $city_id,
+          ];
+        }
+      }
+    }
+  }
+}

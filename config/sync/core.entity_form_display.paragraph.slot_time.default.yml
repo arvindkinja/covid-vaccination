@@ -1,0 +1,34 @@
+uuid: 1b45de74-03fe-4453-80c3-0d6080dace69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slot_time.field_date
+    - field.field.paragraph.slot_time.field_vaccination_centre
+    - paragraphs.paragraphs_type.slot_time
+  module:
+    - datetime
+id: paragraph.slot_time.default
+targetEntityType: paragraph
+bundle: slot_time
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_vaccination_centre:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

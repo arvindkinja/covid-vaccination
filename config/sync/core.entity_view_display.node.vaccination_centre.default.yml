@@ -1,0 +1,62 @@
+uuid: 9712a9f6-4e92-4277-b579-98bd473f0261
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.vaccination_centre.body
+    - field.field.node.vaccination_centre.field_available_slot
+    - field.field.node.vaccination_centre.field_city
+    - field.field.node.vaccination_centre.field_image
+    - image.style.medium
+    - node.type.vaccination_centre
+  module:
+    - image
+    - text
+    - user
+id: node.vaccination_centre.default
+targetEntityType: node
+bundle: vaccination_centre
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_available_slot:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_city:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  layout_builder__layout: true

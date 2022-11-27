@@ -1,0 +1,5 @@
+name: Vaccination Appointment
+description: Perform Vaccination related operation.
+type: module
+core_version_requirement: ^9 || ^10
+package: Covid

@@ -1,0 +1,21 @@
+uuid: 3402be77-3ed0-453e-a6a9-199b9bf27354
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+    - user
+id: user.field_appointment_information
+field_name: field_appointment_information
+entity_type: user
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

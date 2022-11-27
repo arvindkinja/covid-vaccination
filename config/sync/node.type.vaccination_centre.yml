@@ -1,0 +1,17 @@
+uuid: 6b70d8b1-b7f7-4559-ad33-07fd5198a3ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Vaccination Centre'
+type: vaccination_centre
+description: 'Add Vaccination Centres for a city.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,10 @@
+uuid: dbf1a6b8-a8cd-41d6-a9f6-1886c0fc36c2
+langcode: en
+status: true
+dependencies: {  }
+id: slot_time
+label: 'Slot Time'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

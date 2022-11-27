@@ -1,0 +1,22 @@
+uuid: e25ef42a-1bcd-4158-a0ae-de920f34a1f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: vaccination_centre
+label: 'Vaccination Centre'
+type: 'canonical_entities:node'
+pattern: '[node:field_city:entity:name]/[node:title]'
+selection_criteria:
+  f79c59e2-7335-4604-9284-6b0a57af667f:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: f79c59e2-7335-4604-9284-6b0a57af667f
+    context_mapping:
+      node: node
+    bundles:
+      vaccination_centre: vaccination_centre
+selection_logic: and
+weight: -5
+relationships: {  }

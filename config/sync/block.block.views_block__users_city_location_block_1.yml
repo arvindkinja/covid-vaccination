@@ -1,0 +1,37 @@
+uuid: 85987454-14be-4c34-9f0e-2e62c70ab310
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.users_city_location
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - olivero
+id: views_block__users_city_location_block_1
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:users_city_location-block_1'
+settings:
+  id: 'views_block:users_city_location-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

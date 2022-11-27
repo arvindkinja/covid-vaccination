@@ -1,0 +1,18 @@
+uuid: 7a246f5e-0adf-44ca-a64e-28e90a1df30a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vaccination_centre
+id: node.vaccination_centre.title
+field_name: title
+entity_type: node
+bundle: vaccination_centre
+label: 'Centre Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,31 @@
+uuid: 58bce4f0-c20a-4f17-86d8-11c66aedead2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_appointment_information
+    - paragraphs.paragraphs_type.slot_time
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_appointment_information
+field_name: field_appointment_information
+entity_type: user
+bundle: user
+label: 'Appointment Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      slot_time: slot_time
+    negate: 0
+    target_bundles_drag_drop:
+      slot_time:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

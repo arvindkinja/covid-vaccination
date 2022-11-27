@@ -1,0 +1,38 @@
+uuid: e704cfa8-f35d-4519-9c25-8692451f7657
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:54f26704-d9e8-4dbf-98ef-41d4490f6f03'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - olivero
+id: vaccinationlocationregisterblock
+theme: olivero
+region: sidebar
+weight: -8
+provider: null
+plugin: 'block_content:54f26704-d9e8-4dbf-98ef-41d4490f6f03'
+settings:
+  id: 'block_content:54f26704-d9e8-4dbf-98ef-41d4490f6f03'
+  label: 'vaccination Location register block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user\r\n/user/*"

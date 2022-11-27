@@ -1,0 +1,36 @@
+uuid: 607c3f37-ba0b-452e-884e-c969a982ecad
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+    - vaccination_appointment
+  theme:
+    - olivero
+id: vaccinationappointmentformblock
+theme: olivero
+region: content
+weight: -8
+provider: null
+plugin: vaccination_appointment_slot_form_block
+settings:
+  id: vaccination_appointment_slot_form_block
+  label: 'Vaccination Appointment form block'
+  label_display: '0'
+  provider: vaccination_appointment
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      vaccination_centre: vaccination_centre

@@ -1,0 +1,33 @@
+uuid: babad081-15bc-4db2-ace7-a1399897f2ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slot_time.field_date
+    - field.field.paragraph.slot_time.field_vaccination_centre
+    - paragraphs.paragraphs_type.slot_time
+  module:
+    - datetime
+id: paragraph.slot_time.default
+targetEntityType: paragraph
+bundle: slot_time
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: olivero_medium
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_vaccination_centre:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

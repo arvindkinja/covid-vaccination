@@ -1,0 +1,32 @@
+uuid: 11a0c0db-7cf6-453f-bcfe-79b8d6d7861b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sidebar_city_block
+  module:
+    - taxonomy
+    - views
+  theme:
+    - olivero
+id: views_block__sidebar_city_block_block_1
+theme: olivero
+region: sidebar
+weight: -7
+provider: null
+plugin: 'views_block:sidebar_city_block-block_1'
+settings:
+  id: 'views_block:sidebar_city_block-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles:
+      city: city

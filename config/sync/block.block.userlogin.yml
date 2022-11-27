@@ -1,0 +1,32 @@
+uuid: fcb69d82-533c-4412-a30a-7268b73c0f7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - olivero
+id: userlogin
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  label_display: '0'
+  provider: user
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

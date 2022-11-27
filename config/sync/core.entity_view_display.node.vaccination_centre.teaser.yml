@@ -1,0 +1,43 @@
+uuid: acce4273-7c23-4f2a-9204-1af02b191899
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.vaccination_centre.body
+    - field.field.node.vaccination_centre.field_available_slot
+    - field.field.node.vaccination_centre.field_city
+    - field.field.node.vaccination_centre.field_image
+    - node.type.vaccination_centre
+  module:
+    - text
+    - user
+id: node.vaccination_centre.teaser
+targetEntityType: node
+bundle: vaccination_centre
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_city:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_available_slot: true
+  field_image: true
